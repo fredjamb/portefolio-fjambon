@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <style type="text/css">
+  body { background-color:pink;
+       }
+    </style>
+<h1><U>PROJET GEDAP </U></h1>
+   </head>
+   <body>
+    
+<p> Dans le cadre des 3 stages suivis au cours de la formation au GRETA, au sein d'une équipe composée par 4 stagiaires, notre  mission fut de créer un logiciel permettant la gestion des apprentis au sein du GRETA-CFA QUIMPER OCCIDENTALE.
+Celui-ci permettant l'inscription des apprentis dans une base de données ainsi que toutes les opérations inhérentes au suivi du parcours professionnel.</p>
+ 
+
+<U><p>La  Structure informatique</p></U>
+<p>Le projet est hébergé en local sous Laragon, dans le répertoire www, dans un sous-répertoire GEDAP.
+(sur une installation standard, votre chemin d’accès au projet local est : C:\laragon\www\GEDAP)<p>
+
+<p>Dans le répertoire GEDAP, on trouve :<p>
+    <ol>
+  <li>un dossier « spdf » qui contient l’API spdf permettant de générer les pdf à partir du code php. Il ne doit rien contenir d’autre </li>
+	<li> un dossier « .git » caché qui contient des fichiers nécessaires au fonctionnement du projet avec github </li>
+	<li> des fichiers de configuration de git/github (readme.md, .gitignore, .env.development)</li>
+	<li> un dossier « vues » qui contient les fichiers de ressources (php, ...) en affichage dédiés à la consultation et à la connexion</li>
+	<li> un dossier « traitement » qui contient les fichiers de ressources (php, …) nécessaires à la création et à la modification et à la gestion des pdf </li>
+	<li> un dossier « controleurs » qui contient les fichiers php qui effectuent des actions invisibles à l’utilisateur </li>
+	<li> un dossier « images » qui contient les fichiers graphiques </li>
+	<li> un dossier « css » qui contient les fichiers css.</li>
+	</li>
+	</ol>
+	
+<U>La sécurité</U>
+<p>- le site est protégé par mot-de-passe et des droits sont attribués aux utilisateurs par un 
+  administrateur</p>
+<p>- la stratégie de mot-de-passe établit les standards suivants : </p>
+    <ol>
+	
+<li>	 au minimum 12 caractères alphanumérique, incluant les caractères accentués UTF8 et 
+	  les symboles (&»[@, etc.)</li>
+<li>	 le mot-de-passe doit être changé tous les X mois, un rappel est affiché à l’utilisateur après
+	  l’identification si la date est dépassée (et/ou l’utilisateur est envoyé sur la page de compte)
+	  </li>
+<li>	 le mot-de-passe ne peut être identique au mot-de-passe précédent (au moins X 
+	  caractères de différence)</li>
+	  </li>
+	  </ol>
+<p>- l’accès à la base de données est protégée par un fichier de configuration (config.php) située dans
+  le répertoire racine du projet (GEDAP).<p>
+
+<U>Connexion</U><br>
+<p>L’interface de connexion comprend une page php et un fichier contrôleur. L’utilisateur accède au progiciel par la page connexion.php. La saisie du login/pass détermine ses droits d’accès.</p>
+	<U><p>connexion.php</p></U>
+	<ol>
+	
+	<li> formulaire : login, mot-de-passe, bouton submit, bouton reset</li>
+	<li> un lien : « mot-de-passe oublié ? » (action à déterminer)</li>
+	<li> envoi vers le contrôleur test_cnx.php</li>
+	</li>
+	</ol>
+	<U><p>test_cnx.php</p></U>
+	    <ol>
+	
+		<li> accès à la base de données ‘gedap’, table ‘user’</li>
+		<li> test les variables POST envoyées par connexion.php
+		  en fonction du résultat (droits : A, C, M), envoie automatiquement vers l’interface
+		  d’administration (menu.php), l’interface de consultation (filtre.php), l’interface de
+		  modification (menu.php)</li>
+		  
+		  </ol>
+<U>Administration</U><br>
+<p>L’interface d’administration est composée de quatre pages :<p>
+<ol>
+	<li> une page menu.php, </li>
+	<li> une page de création d’année n_annee.php, </li>
+	<li> une page de création de formation n_formation.php,</li>
+	<li> une page de gestion de compte compte.php.</li>
+	
+	</ol>
+<p>Toutes les pages d’administration sont dotées :</p>
+<ol>
+
+	<li> d’un bouton déconnexion, situé dans la partie droite du bandeau « logos »</li>
+	<li> d’un bandeau de cheminement, sous le bandeau « logos », indiquant la page en cours 
+	  et permettant de revenir sur la/les page(s) précédente(s)</li>
+</ol>	  
+<p>La page: Menu </p>
+<ol>
+	<li> teste les droits de l’utilisateur et affiche des éléments de menu différenciés</li>
+	<li> accès à la base de données ‘gedap’, table ‘user’</li>
+	<li> un lien ‘nouvelle année’ envoie vers la page n_annee.php</li>
+	<li> un lien ‘nouvelle formation’ envoie vers la page n_formation.php</li>
+	<li> un formulaire permet de créer un nouveau compte : input login, mot-de-passe, droits</li>   
+  
+  </ol>
+  <p>Extrait de code en PHP</p>
+  <p><img src="../portefolio2023/images/gedap1000.PNG" /></p>
+  
+  <input type=button onclick=window.location.href="index.html"; value=RETOUR />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	</html>
+</body>	

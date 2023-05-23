@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <style type="text/css">
+  body { background-color:#00FF7F;
+       }
+    </style>
+<h1><U>BLACKJACK (JAVASCRIPT) </U></h1>
+   </head>
+   <body>
+   
+
+<p>Le but de ce projet à été de créer un site avec du javascript permettant de reproduire un Blackjack, d’un affichage html statique à un Blackjack fonctionnel.</p>
+
+<U><h1>1. EXPLICATION BASES DU JEU</U></h1>
+<p>Le Blackjack est un jeu de cartes opposant un joueur contre la banque. Le but est de battre la banque sans dépasser 21 points. Dès qu’un joueur fait plus que 21, il perd la manche. La valeur des cartes est établie comme suit :</p>
+<ul>
+<li>As : 1 point</li>
+<li>De 2 à 10 : valeur nominale de la carte</li>
+<li>Figures (valet, dame, roi) : 10 points</li>
+</ul>
+<p>Au début de la partie, la banque distribue une carte face visible au joueur et à la banque. Puis il demande au joueur l’option qu’il désire choisir :</p>
+
+<p>Si le joueur veut une carte, il doit l’annoncer en disant « Carte ! ». Le joueur peut demander autant de cartes qu’il le souhaite pour approcher la valeur 21 sans la dépasser. Si, après le tirage d’une carte, il a dépassé 21, il perd la manche et la banque gagne.
+Si le joueur décide de s’arrêter, il l’annonce en disant « Je reste », c’est alors à la banque de jouer.</p>
+
+<U><h1>2. PAGE HTML / CSS</U></h1>
+<p>Il s'agit de coder une première page web statique en HTML</p>
+<p>Ensuite, il s'agit de créer une page CSS afin d'avoir un rendu sur fond vert</p>
+<U><h1>3. JAVASCRIPT</U></h1>
+<p>A présent, il s'agit d'ajouter progressivement les différentes actions telles: </p>
+<p> donner une carte aléatoire à la banque et au joueur, en utilisant la fonction Math.random. Lire la documentation de cette fonction au besoin.<p>
+<p>ajouter une nouvelle carte à côté des cartes du joueur.</p>
+<p>calculer le score du joueur, en faisant la somme des valeurs des cartes .</p>
+<p>actualiser le score dans la page HTML à chaque fois que le joueur appuie sur le bouton « Carte ».</p>
+<p>si le score dépasse 21, afficher un message dans la page HTML à l'adresse de l'utilisateur pour le notifier qu'il a perdu la manche.</p>
+<p>si le score de la banque est supérieur à celui du joueur et inférieur à 21, afficher un message dans la page HTML à l'adresse de l'utilisateur pour le notifier qu'il a perdu la manche. Dans les autres cas, annoncez-lui qu'il a gagné.</p>
+<p>permettre au joueur de recommencer une manche avec le bouton « Rejouer ».</p>
+<p>afficher Blac-Jack !! Vous avez gagné dans le cas où le score du joueur est égal à 21.</p>
+
+<input type=button onclick=window.location.href="index.html"; value=RETOUR />
+
+ </body>
+   </html>
